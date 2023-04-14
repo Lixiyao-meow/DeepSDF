@@ -37,31 +37,18 @@ def process(mesh_filepath, target_filepath):
     writeSDFToNPZ(xyz, sdfs, target_filepath)
     
 
-class_path = "/04256520/train/"
+file_path = "./dataset/04256520/train/1.obj"
 
 # make directory in target file
-target_path = "./processed_data/train/" + class_path
+target_path = "./processed_data/04256520/single/"
 
-isExist = os.path.exists(target_path)
+repeat = 10
 
-if not isExist:
-   os.makedirs(target_path)
-
-# find all mesh file from dataset
-mesh_filenames = list(glob.iglob("dataset" + class_path + "*.obj"))
-
-N = len(mesh_filenames)
-it = 0
-
-for mesh_filepath in mesh_filenames:
+for i in range(repeat):
     
-    list_mesh_filepath = mesh_filepath.split("/")
-    target_filepath = os.path.join(target_path, list_mesh_filepath[2])
-        
-    target_filepath = os.path.abspath(target_filepath)
+    target_filepath = os.path.join(target_path, str(i+1))
     
     # generate point clounds
-    process(mesh_filepath, target_filepath)
+    process(file_path, target_filepath)
 
-    it += 1
-    print("process finished:", list_mesh_filepath[2], it, "/", N)
+    print("process finished:", i+1, "/", repeat)
