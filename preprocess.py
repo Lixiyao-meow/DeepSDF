@@ -37,10 +37,10 @@ def process(mesh_filepath, target_filepath):
     writeSDFToNPZ(xyz, sdfs, target_filepath)
     
 
-class_path = "/04256520/train/"
+class_path = "/04256520/validation/"
 
 # make directory in target file
-target_path = "./processed_data/train/" + class_path
+target_path = "./processed_data/validation/"
 
 isExist = os.path.exists(target_path)
 
@@ -56,12 +56,10 @@ it = 0
 for mesh_filepath in mesh_filenames:
     
     list_mesh_filepath = mesh_filepath.split("/")
-    target_filepath = os.path.join(target_path, list_mesh_filepath[2])
-        
-    target_filepath = os.path.abspath(target_filepath)
-    
+    target_filepath = os.path.join(target_path, list_mesh_filepath[3].split(".")[0])
+
     # generate point clounds
     process(mesh_filepath, target_filepath)
-
+    
     it += 1
-    print("process finished:", list_mesh_filepath[2], it, "/", N)
+    print("process finished:", list_mesh_filepath[3], it, "/", N)
