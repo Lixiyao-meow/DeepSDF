@@ -1,6 +1,5 @@
 /img/
+evaluation.ipynb
 
 .DS_Store
-__pycache__/
-
-*.log
+__pycache__
