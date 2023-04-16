@@ -32,6 +32,7 @@ def train_decoder(epochs = 200,
     torch_train = DataLoader(train_dataset,shuffle=True, batch_size=batch_size, num_workers=1)
 
     # ------------ load auto decoder model ------------
+    
     SDF_autodecoder = Decoder().to(device)
 
     # ------------ set training parameters ------------

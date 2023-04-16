@@ -36,7 +36,7 @@ def process(mesh_filepath, target_filepath):
     writeSDFToNPZ(xyz, sdfs, target_filepath)
     
 
-class_path = "/04256520/validation/"
+class_path = "/validation/"
 
 # make directory in target file
 target_path = "./processed_data/validation/"
