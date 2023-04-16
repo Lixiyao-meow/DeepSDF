@@ -3,7 +3,6 @@ from mesh_to_sdf import sample_sdf_near_surface
 import os
 import glob
 import trimesh
-import pyrender
 import numpy as np
 
 
