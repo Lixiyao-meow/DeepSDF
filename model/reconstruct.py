@@ -16,7 +16,7 @@ def reconstruct_latent(decoder,
     num_samples = 15000
 
     # initilise latent
-    latent = torch.ones(1, latent_size).normal_(mean=0, std=init_std)
+    latent = torch.ones(1, latent_size).normal_(mean=0, std=init_std).cuda()
     latent.requires_grad = True
 
     # set optimizer and loss
@@ -28,8 +28,8 @@ def reconstruct_latent(decoder,
         
         decoder.eval()
 
-        xyz = sdf_data[:, 0:3]
-        sdf_gt = sdf_data[:, 3].unsqueeze(1)
+        xyz = sdf_data.cuda()[:, 0:3]
+        sdf_gt = sdf_data.cuda()[:, 3].unsqueeze(1)
         sdf_gt = torch.clamp(sdf_gt, minT, maxT)
 
         optimizer.zero_grad()
@@ -40,6 +40,8 @@ def reconstruct_latent(decoder,
         pred_sdf = torch.clamp(pred_sdf, minT, maxT)
 
         loss = loss_l1(pred_sdf, sdf_gt)
+        loss += 1e-4 * torch.mean(latent.pow(2)) # L2 regularization
+
         loss.backward()
         optimizer.step()
         
@@ -53,7 +55,7 @@ def decode_sdf(decoder, latent_vector, queries):
     num_samples = queries.shape[0]
     latent_repeat = latent_vector.expand(num_samples, -1)
 
-    inputs = torch.cat([latent_repeat, queries], 1)
+    inputs = torch.cat([latent_repeat, queries.cuda()], 1)
 
     sdf = decoder(inputs)
     
@@ -119,7 +121,6 @@ def create_mesh(filename,
                 N=128, 
                 max_batch=16 ** 3):
  
-
     decoder.eval()
 
     # NOTE: the voxel_origin is actually the (bottom, left, down) corner, not the middle
