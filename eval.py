@@ -11,7 +11,6 @@ SDF_autodecoder = Decoder().to(device)
 # ------------ initialization ------------
 train_data_size = 50
 lat_vecs = torch.nn.Embedding(train_data_size, 256, max_norm=1.0).cuda()
-torch.nn.init.normal_(lat_vecs.weight.data, 0.0, 0.01)  #1.0 / np.sqrt(256))
 
 # set optimizer
 optimizer_all = torch.optim.Adam(
