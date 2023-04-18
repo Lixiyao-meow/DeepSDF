@@ -26,7 +26,7 @@ The points are coloured with their SDF values with a linear scale from red (+) t
 
 ### Training loss
 
-<img src="https://github.com/Lixiyao-meow/DeepSDF/blob/main/img/training_loss.png" width="360">
+<img src="https://github.com/Lixiyao-meow/DeepSDF/blob/main/img/training_loss.png" width="540">
 
 ### Shape reconstruction
 
