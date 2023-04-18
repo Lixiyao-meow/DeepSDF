@@ -7,7 +7,7 @@ Our objective was to reproduce the auto-encoder for a batch of similar shapes, a
 ## Run
 
 ### Preprocessing
-To preprocess the data, run ```preprocess.py```. We used the Python library ```mesh_to_sdf``` to sample 15,000 points non-uniformly near the surface. Note that the user will need to set the path to the dataset in this file.
+To preprocess the data, run ```preprocess.py```. We used the Python library ```mesh_to_sdf``` to sample 15,000 points non-uniformly near the surface. By default, we set the path to ```./processed_data/validation/```. However, note that the user will need to set the path to ```./processed_data/train/``` to process training data.
 
 ### Train
 To train the model, run ```train.py```. You will need to modify the training parameters directly in this file.
@@ -35,5 +35,6 @@ The upper graphs show the reconstructed shape, while the bottom graphs show the 
 <img src="https://github.com/Lixiyao-meow/DeepSDF/blob/main/img/reconstruction.png" width="720">
 
 ## References
+
 - DeepSDF: https://github.com/facebookresearch/DeepSDF
 - Python Library ```mesh-to-sdf```: https://pypi.org/project/mesh-to-sdf/
