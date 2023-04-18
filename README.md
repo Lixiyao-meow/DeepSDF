@@ -2,7 +2,7 @@
 
 We implemented an implicit representation, the Signed Distance Function (SDF) representation, based on the paper by Park et al. (2019) (https://arxiv.org/abs/1901.05103).
 
-Our objective was to reproduce the auto-encoder for a batch of similar shapes, and then train and test the network on the ShapeNet dataset. We trained our model on 50 samples from the sofa category for 200 epochs.
+Our objective was to reproduce the auto-decoder for a batch of similar shapes, and then train and test the network on the ShapeNet dataset. We trained our model on 50 samples from the sofa category for 200 epochs.
 
 ## Run
 
