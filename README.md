@@ -29,7 +29,10 @@ The points are coloured with their SDF values with a linear scale from red (+) t
 
 ### Shape reconstruction
 
-Although our model is able to learn the general shape of the class and some variation can be observed depending on the input model’s shape, it fails to capture more intricate details.
+The upper graphs show the reconstructed shape, while the bottom graphs show the ground truth. Although our model is able to learn the general shape of the class and some variation can be observed depending on the input model’s shape, it fails to capture more intricate details.
 
 <img src="https://github.com/Lixiyao-meow/DeepSDF/blob/main/img/reconstruction.png" width="720">
 
+## References
+- DeepSDF: https://github.com/facebookresearch/DeepSDF
+- Python Library ```mesh-to-sdf```: https://pypi.org/project/mesh-to-sdf/
