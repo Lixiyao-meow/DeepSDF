@@ -39,7 +39,7 @@ def train_decoder(epochs = 200,
 
     # initializa latent vectors
     lat_vecs = torch.nn.Embedding(len(train_dataset), 256, max_norm=1.0).cuda()
-    torch.nn.init.normal_(lat_vecs.weight.data, 0.0, lat_vecs_std)  #1.0 / np.sqrt(256))
+    torch.nn.init.normal_(lat_vecs.weight.data, 0.0, lat_vecs_std)
 
     # set optimizer
     optimizer_all = torch.optim.Adam(
