@@ -11,6 +11,7 @@ To preprocess the data, run ```preprocess.py```. We used the Python library ```m
 
 ### Train
 To train the model, run ```train.py```. You will need to modify the training parameters directly in this file.
+We saved our trained model in ```checkpoints/trained_model.pt```.
 
 ### Reconstruction
 To reconstruct the mesh, run ```reconstruct.py```. This file will load each point cloud from ```./processed_data/validation/``` and infer the SDF value to render the zero-level-set boundary using the marching cubes algorithm.
