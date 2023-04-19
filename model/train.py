@@ -53,7 +53,7 @@ def train_decoder(epochs = 200,
     # other parameters
     minT, maxT = -0.1, 0.1 # clamp
 
-    # ------------ traing process ------------ 
+    # ------------ training process ------------ 
 
     print("---- start training ----")
     loss_log = []
