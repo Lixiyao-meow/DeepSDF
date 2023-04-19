@@ -30,9 +30,11 @@ The points are coloured with their SDF values with a linear scale from red (+) t
 
 ### Shape reconstruction
 
-The upper graphs show the reconstructed shape, while the bottom graphs show the ground truth. Although our model is able to learn the general shape of the class and some variation can be observed depending on the input model’s shape, it fails to capture more intricate details.
+The upper graphs show the reconstructed shape, while the bottom graphs show the ground truth. Although our model is able to learn the general shape of the class and some variation can be observed depending on the input model’s shape, it fails to capture more intricate details. 
 
 <img src="https://github.com/Lixiyao-meow/DeepSDF/blob/main/img/reconstruction.png" width="720">
+
+Based on our experiments, we believe that the SDF is a promising representation, but the idea of removing the encoder does not seem reliable. More analysis and discussion can be found in our report in this repository.
 
 ## References
 
